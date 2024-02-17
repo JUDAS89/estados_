@@ -5,7 +5,7 @@ import SocialButton from './socialButton';
 import { faFacebookF, faTwitter, faGoogle } from '@fortawesome/free-brands-svg-icons'
 import './style.css'
 
-const Registro = () => {
+const Registro = ({ showAlert }) => {
   return (    
     <>
     <div className='cuerpoFormulario'>
@@ -16,7 +16,7 @@ const Registro = () => {
         <SocialButton icon={faGoogle} />
         <h4>O usa tu email para registrarte</h4>
       </div>
-      <Formulario/>
+      <Formulario showAlert={showAlert} />
     </div>
     </>                                                                                                                                                                                                                                                                                                                                                     
   )

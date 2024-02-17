@@ -1,9 +1,12 @@
-import React from 'react'
-
-const Alert = () => {
-  return (
-    <div>alert</div>
-  )
-}
-
-export default Alert
+const Alert = ({ message, variant }) => {
+    if (!message) return null;
+  
+    return (
+      <div className={`alert alert-${variant}`}>
+        {message}
+      </div>
+    );
+  };
+  
+  export default Alert;
+  
