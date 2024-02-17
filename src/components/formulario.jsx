@@ -9,30 +9,36 @@ const Formulario = ({ showAlert }) => {
   const [email, setEmail]=useState("")
   const [password, setPassword]=useState("")
   const [repassword, setRepassword]=useState("")
-  const [error, setError]=useState(false)
   const [passwordError, setPasswordError]=useState(false)
+  const [error, setError]=useState(false)
 
   const validarRegistro=(e)=>{
     e.preventDefault()
 
+    let hasError=false
+
   if (nombre === '' || email === '' || password === '' || repassword === '') {
-    setError(true);
-    showAlert("No debes dejar campos vacíos", "danger");
-    return;
+    setError(true)
+    showAlert("No debes dejar campos vacíos", "danger")
+    hasError=true
   }
   if (password !== repassword) {
-    setError(true);
-    setPasswordError(true);
-    showAlert("Las contraseñas no coinciden", "danger");
-    return;
+    setPasswordError(true)
+    showAlert("Las contraseñas no coinciden", "danger")
+    hasError=true
+  } else {
+    setPasswordError(false)
   }
-  showAlert("Registro exitoso", "success");
+  if (!hasError){
+    setError(false)
+    showAlert("Registro exitoso", "success")
+  }
   }
 
   return (
     <div className='form-group'>
     <Form onSubmit={validarRegistro}>
-      {error&&<p className="error">{passwordError?"Las contraseñas no coinciden":"No debes dejar campos vacios"}</p>}
+      {passwordError&&<p className="error"></p>}
       
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Control type="text" placeholder="Nombre" value={nombre} onChange={(e)=>setNombre(e.target.value)}/>
@@ -54,7 +60,6 @@ const Formulario = ({ showAlert }) => {
         Registrarse
       </Button>
     </Form>
-
     </div>
   )
 }
