@@ -2,12 +2,14 @@ import React from 'react'
 import { Alert } from 'react-bootstrap';
 import Formulario from './formulario';
 import SocialButton from './socialButton';
-import { faFacebookF, faTwitter, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faTwitter, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import './style.css'
 
 const Registro = () => {
   return (    
     <>
-      <div>
+    <div className='cuerpoFormulario'>
+    <div className='rrss'>
         <h2></h2>
         <SocialButton icon={faFacebookF} />
         <SocialButton icon={faTwitter} />
@@ -15,6 +17,7 @@ const Registro = () => {
         <h4>O usa tu email para registrarte</h4>
       </div>
       <Formulario/>
+    </div>
     </>                                                                                                                                                                                                                                                                                                                                                     
   )
 }
