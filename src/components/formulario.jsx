@@ -18,19 +18,16 @@ const Formulario = ({ showAlert }) => {
     let hasError=false
 
   if (nombre === '' || email === '' || password === '' || repassword === '') {
-    setError(true)
-    showAlert("No debes dejar campos vacíos", "danger")
+    showAlert("Completa todos los campos", "danger")
     hasError=true
   }
+
   if (password !== repassword) {
-    setPasswordError(true)
     showAlert("Las contraseñas no coinciden", "danger")
     hasError=true
-  } else {
-    setPasswordError(false)
-  }
+  } 
+
   if (!hasError){
-    setError(false)
     showAlert("Registro exitoso", "success")
   }
   }
@@ -38,7 +35,6 @@ const Formulario = ({ showAlert }) => {
   return (
     <div className='form-group'>
     <Form onSubmit={validarRegistro}>
-      {passwordError&&<p className="error"></p>}
       
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Control type="text" placeholder="Nombre" value={nombre} onChange={(e)=>setNombre(e.target.value)}/>
@@ -56,7 +52,7 @@ const Formulario = ({ showAlert }) => {
         <Form.Control type="password" placeholder="Confirma tu contraseña" value={repassword} onChange={(e)=>setRepassword(e.target.value)}/>
       </Form.Group>
 
-      <Button variant="success" type="submit">
+      <Button variant="success" type="submit" className='btnForm'>
         Registrarse
       </Button>
     </Form>

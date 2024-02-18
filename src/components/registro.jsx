@@ -8,16 +8,15 @@ import './style.css'
 const Registro = ({ showAlert }) => {
   return (    
     <>
-    <div className='cuerpoFormulario'>
     <div className='rrss'>
-        <h2></h2>
-        <SocialButton icon={faFacebookF} />
-        <SocialButton icon={faTwitter} />
-        <SocialButton icon={faGoogle} />
-        <h4>O usa tu email para registrarte</h4>
+      <div className='btnR'>
+        <SocialButton icon={faFacebookF}/>
+        <SocialButton icon={faTwitter}/>
+        <SocialButton icon={faGoogle}/>
+      </div>
+        <h5>O usa tu email para registrarte</h5>
       </div>
       <Formulario showAlert={showAlert} />
-    </div>
     </>                                                                                                                                                                                                                                                                                                                                                     
   )
 }

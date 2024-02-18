@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const SocialButton = ({ icon, onClick }) => {
   return (
-    <button onClick={onClick}>
+    <button className='btnRrss' onClick={onClick}>
       <FontAwesomeIcon icon={icon} />
     </button>
   );
